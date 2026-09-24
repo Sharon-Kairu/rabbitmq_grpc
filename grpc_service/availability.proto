@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package availability;
+
+service AvailabilityService {
+  rpc GetAvailableSlots (DoctorRequest) returns (SlotsResponse);
+}
+
+message DoctorRequest {
+  int32 doctor_id = 1;
+}
+
+message SlotsResponse {
+  repeated string available_slots = 1;
+}
